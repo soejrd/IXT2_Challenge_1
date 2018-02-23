@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX ITS Dashboard</title>
+    <link rel="stylesheet" href="./styleMobile.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="./three.min.js"></script>
+    <script src="./hilbert3D.js"></script>
+    <script type="text/javascript" src="./threeoctree.js"></script>
+    <script src="./core.js"></script>
+
+
+</head>
+
+<body onload="loadFunction()">
+    <section id="wrapper">
+        <header>
+            <h1>SpaceX <span>ITS</span></h1>
+            <h2>live dashboard</h2>
+        </header>
+        <section id="rotation">
+            <img src="./_img/_rotation/render01.png" alt="" class="dynamicObject">
+            <p id="rectNumbers"> 52 81 82 64 99 60 68 37 14 33 50 24 84 70 20 53 65 91 88 11 95 83 31 32 98 3 90 57 5 42 34 58 17 9 4 46 76 62 23 35 86 79 95 83 31 32 98 74 04 63 06 26 06 65 88 91 71 94 06 36 96 62 01 45
+            </p>
+            <p id="positionInformation">Latitude: <span id="latitude">300</span><br/> Longitude: <span id="longitude">-60</span><br/>
+            </p>
+            <span id="distortionNumber">2.41</span>
+            <svg class="static">
+                <line x1="0%" y1="50%" x2="100%" y2="50%" stroke-dasharray="1, 8" />
+                <line x1="50%" y1="0%" x2="50%" y2="100%" stroke-dasharray="1, 8" />
+                <svg class="dynamic">
+                    <circle cx="50%" cy="45%" r="220" fill="none" stroke-dasharray="1, 100" class="dynamicObject"/>
+                    <circle cx="50%" cy="45%" r="220" fill="none" stroke-dasharray="1, 20" class="dynamicObject thin"/>
+                    <rect x="27.5%" y="-10%" width="45%" height="150%" stroke-dasharray="2, 2" class="dynamicObject"></rect>
+                    <rect class="wide dynamicObject" x="26%" y="-10%" width="48%" height="125%" stroke-dasharray="2, 50"/>
+                    <line x1="50%" y1="0%" x2="50%" y2="100%" stroke-dasharray="10,2" class="dynamicObject"/>
+                </svg>
+            </svg>
+
+        </section>
+        <p id="breakNumbers"> 900 375 913 867 724 238 786 385 868 682 510 557 727 314 555 49 197 286 772
+        </p>
+        <section id="fuel">
+            <h1>Coördination Route Visualization</h1>
+            <canvas id="fuelGraph">
+            </canvas>
+        </section>
+        <section id="remaining">
+            <section class="one">
+                <h3>Remaining</h3>
+                <div class="remainingWrapper">
+                    <h2 id="remainingNumber">43.5839</h2><span>%</span>
+                </div>
+            </section>
+            <section class="two">
+                <p id="log">9.1032376280e-1 1.6844079050e+0 1.3311823830e+0</p>
+                <p id="dateOne"><span class="first">2030-03-04</span> 2030-04-08 2030-05-07 2030-09-13 2031-03-06 2031-04-23</p>
+                <p id="dateTwo">2031-08-03 2031-12-19 2032-04-22 2033-01-10 <span class="second">2033-09-16</span> 2034-09-24</p>
+                <p id="eta">ETA: 15M</p>
+                <canvas id="canvasTwo"></canvas>
+            </section>
+            <section class="three">
+                <svg id="remainingCircle">
+                    <circle id="two" cx="50%" cy="50%" r="40%" fill="none" stroke-dasharray=".5, 8"/>
+                    <circle id="three" cx="50%" cy="50%" r="37.5%" fill="none" />
+                    <circle id="four" cx="50%" cy="50%" r="35.2%" fill="none" />
+                    <g id="cloud">
+                        <circle class="cloud" cx="50%" cy="50%" r="33.33%" fill="none" stroke-dasharray="1,30"/>  
+                        <circle class="cloud" cx="50%" cy="50%" r="30.6%" fill="none" stroke-dasharray="1,40" transform='rotate(68)'/>   
+                        <circle class="cloud" cx="50%" cy="50%" r="123" fill="none" stroke-dasharray="1,40" transform='rotate(15)'/> 
+                        <circle class="cloud" cx="50%" cy="50%" r="121" fill="none" stroke-dasharray="1,50"/>
+                        <circle class="cloud" cx="50%" cy="50%" r="118" fill="none" stroke-dasharray="1,25" transform='rotate(90)'/> 
+                        <circle class="cloud" cx="50%" cy="50%" r="116" fill="none" stroke-dasharray="1,25" transform='rotate(40)'/>   
+                    </g>
+                    <circle id="five" cx="50%" cy="50%" r="25.33%" fill="none" />
+                    <circle id="six" cx="50%" cy="50%" r="21.33%" fill="none" />
+                    <circle id="seven" cx="50%" cy="50%" r="16.66%" fill="none" />
+                    <circle id="eight" cx="50%" cy="50%" r="12%" fill="none" />
+                    <circle id="sun" cx="50%" cy="50%" r="2.133%" fill="white" />
+                    <g id="mars">
+                        <g class="mars">
+                           <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="200s" repeatCount="indefinite" />
+                            <circle class="planet" cx="0" cy="0" r="10" fill="white"/>
+                            <circle id="mars2" cx="0" cy="0" r="17.6" fill="none"/>
+                            <circle id="mars3" cx="0" cy="0" r="30.8" fill="none" stroke-dasharray="1,1"/>
+                            <circle id="mars4" cx="0" cy="0" r="44.4" fill="none"/>
+                            <line id="marsLine" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+
+                    </g>
+                    <g id="jupiter">
+                        <g class="jupiter">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="150s" repeatCount="indefinite" />
+                            <circle cx="0" cy="0" r="10" fill="none" stroke="white"></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <g id="aarde">
+                        <g class="aarde">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="220s" repeatCount="indefinite" />
+                            <circle class="planet" cx="0" cy="0" r="20" fill="yellow" ></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <g id="venus">
+                        <g class="venus">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="180s" repeatCount="indefinite" />
+                            <circle cx="0" cy="0" r="20" fill="transparent" ></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                        <g transform="scale(.17)">
+                        <g class="mercury">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="150s" repeatCount="indefinite" />
+                            <circle cx="0" cy="0" r="30" fill="transparent" ></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                </svg>
+            </section>
+        </section>
+    </section>
+
+    <script src="./endCore.js"></script>
+</body>
+
+</html>
