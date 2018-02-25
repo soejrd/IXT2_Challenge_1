@@ -2,8 +2,8 @@ window.onresize = function () {
     location.reload();
 }
 
-function loadFunction() {
 
+function loadFunction() {
     updateRotation();
     countingNumbers();
     mapRemaining();

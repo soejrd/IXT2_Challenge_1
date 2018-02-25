@@ -90,7 +90,7 @@ body {
             border-radius: $radius;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 8fr 1fr;
+            grid-template-rows: 10fr 1fr;
             background-size: 10% 4%;
             //background-image: linear-gradient(to right, $red25 1px, transparent 1px), linear-gradient(to bottom, $red25 1px, transparent 1px);
             overflow: hidden;
@@ -147,7 +147,7 @@ body {
                 color: $white50;
                 font-family: 'Source Code Pro', monospace;
                 font-size: 6px;
-                line-height: 12px;
+                line-height: 16px;
                 width: 10px;
                 grid-column: 1/2;
                 grid-row: 1/3;

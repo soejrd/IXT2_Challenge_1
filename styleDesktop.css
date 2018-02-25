@@ -68,7 +68,7 @@ body {
       border-radius: 32px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 8fr 1fr;
+      grid-template-rows: 10fr 1fr;
       background-size: 10% 4%;
       overflow: hidden; }
       body section#wrapper section#rotation .dynamicObject {
@@ -114,7 +114,7 @@ body {
         color: rgba(255, 255, 255, 0.5);
         font-family: 'Source Code Pro', monospace;
         font-size: 6px;
-        line-height: 12px;
+        line-height: 16px;
         width: 10px;
         grid-column: 1/2;
         grid-row: 1/3;
