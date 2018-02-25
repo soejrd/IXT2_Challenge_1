@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+    <link rel="stylesheet" href="./mapStyle.css">
+</head>
+
+<body>
+    <section class="three">
+        <svg id="remainingCircle">
+                   
+                    <circle id="two" cx="50%" cy="50%" r="40%" fill="none" stroke-dasharray=".5, 8"/>
+                    <circle id="three" cx="50%" cy="50%" r="37.5%" fill="none" />
+                    <circle id="four" cx="50%" cy="50%" r="35.2%" fill="none" />
+                    <g id="cloud">
+                        <circle class="cloud" cx="50%" cy="50%" r="33.33%" fill="none" stroke-dasharray="1,30"/>  
+                        <circle class="cloud" cx="50%" cy="50%" r="30.6%" fill="none" stroke-dasharray="1,40" transform='rotate(68)'/> 
+                        <circle class="cloud" cx="50%" cy="50%" r="32.8%" fill="none" stroke-dasharray="1,40" transform='rotate(15)'/> 
+                        <circle class="cloud" cx="50%" cy="50%" r="32.26%" fill="none" stroke-dasharray="1,50"/>
+                        <circle class="cloud" cx="50%" cy="50%" r="31.466%" fill="none" stroke-dasharray="1,25" transform='rotate(90)'/> 
+                        <circle class="cloud" cx="50%" cy="50%" r="30.93%" fill="none" stroke-dasharray="1,25" transform='rotate(40)'/>   
+                    </g>
+                    <circle id="five" cx="50%" cy="50%" r="25.33%" fill="none" />
+                    <circle id="six" cx="50%" cy="50%" r="21.33%" fill="none" />
+                    <circle id="seven" cx="50%" cy="50%" r="16.66%" fill="none" />
+                    <circle id="eight" cx="50%" cy="50%" r="12%" fill="none" />
+
+
+                    <g id="mars">
+                        <g class="marsPlanet">
+                           <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="500s" repeatCount="indefinite" />
+                            <circle class="planet" cx="0" cy="0" r="10" fill="white"/>
+                            <circle id="mars2" cx="0" cy="0" r="17.6" fill="none"/>
+                            <circle id="mars3" cx="0" cy="0" r="30.8" fill="none" stroke-dasharray="1,1"/>
+                            <circle id="mars4" cx="0" cy="0" r="44.4" fill="none"/>
+                            <line id="marsLine" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <g id="jupiter">
+                        <g class="jupiter">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="400s" repeatCount="indefinite" />
+                            <circle cx="0" cy="0" r="10" fill="none" stroke="white"></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <g id="aarde">
+                        <g class="aarde">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="350s" repeatCount="indefinite" />
+                            <circle class="planet" cx="0" cy="0" r="20" fill="yellow" ></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <g id="venus">
+                        <g class="venus">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="180s" repeatCount="indefinite" />
+                            <circle cx="0" cy="0" r="20" fill="transparent" ></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <g id="mercury">
+                        <g class="mercury">
+                          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="150s" repeatCount="indefinite" />
+                            <circle cx="0" cy="0" r="30" fill="transparent" ></circle>
+                            <line id="line" x1="0" y1="0" x2="50%" y2="50%"></line>
+                        </g>
+                    </g>
+                    <circle id="sun" cx="50%" cy="50%" r="2.133%" fill="white" stroke="transparent" stroke-width="0"/>
+                </svg>
+    </section>
+
+</body>
+
+</html>

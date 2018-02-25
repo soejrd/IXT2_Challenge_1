@@ -1,0 +1,107 @@
+$white50: rgba(255, 255, 255, 0.5);
+$red: red;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+    width: auto;
+    margin-top: 5vmin;
+    height: 90vmin;
+
+    section {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+svg#remainingCircle {
+    width: 100%;
+    height: 100%;
+    circle#sun {
+    stroke: transparent;
+    stroke-width: 0;
+    z-index: 5;
+}
+    circle {
+        stroke: white;
+        stroke-width: 2;
+        transform-origin: center;
+    }
+    circle#two {
+        stroke-width: 18;
+    }
+    circle#three {
+        stroke: $white50;
+    }
+    circle#four {
+        stroke: $white50;
+    }
+    circle.cloud {
+        stroke-width: 1;
+    }
+    circle#five,
+    circle#seven,
+    circle#eight {
+        stroke-width: 1;
+    }
+    g#mars {
+        transform: scale(0.5) rotate(85deg);
+    }
+    g#jupiter {
+        transform: scale(.36) rotate(155deg);
+    }
+    g#aarde {
+        transform: scale(.3) rotate(50deg);
+    }
+    g#venus {
+        transform: scale(.235) rotate(237deg);
+    }
+    g#mercury {
+        transform: scale(.17) rotate(310deg);
+    }
+    g {
+        transform-origin: center;
+        g.marsPlanet {
+            circle#mars2 {
+                stroke: $red;
+                stroke-width: 4.4
+            }
+            circle#mars3 {
+                stroke-width: 4;
+            }
+            circle#mars4 {
+                stroke-width: 4;
+                stroke: $red;
+            }
+        }
+        g {
+            circle.planet {
+                stroke-width: 0;
+            }
+            circle {
+                stroke-width: 5;
+            }
+            line {
+                stroke: white;
+                stroke-width: 3;
+            }
+        }
+        g.venus {
+            line {
+                stroke-width: 5;
+            }
+        }
+        g.mercury {
+            line {
+                stroke-width: 8;
+            }
+            circle {
+                stroke-width: 10;
+            }
+        }
+    }
+}
